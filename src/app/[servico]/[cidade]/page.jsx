@@ -1,6 +1,59 @@
 import React from 'react';
 import cidades from '../../../../cidades.json';
 import termos from '../../../../termos.json';
+import estados from '../../../../estados.json';
+
+function gerarHash(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return Math.abs(hash);
+}
+
+function escolherFrase(frases, seed) {
+  const indice = seed % frases.length;
+  return frases[indice];
+}
+
+function construirIntro(cidade, servico, estadoInfo) {
+  const isPequena = cidade.populacao < 100000;
+  const fraseEstado = escolherFrase(estadoInfo.frases, gerarHash(cidade.slug + servico.slug));
+  
+  if (isPequena) {
+    return `${fraseEstado} Em ${cidade.nome}, com aproximadamente ${cidade.populacao.toLocaleString('pt-BR')} habitantes, empresas que apostam em ${servico.termo} estão conquistando vantagem competitiva sobre a concorrência que ainda opera de forma tradicional. A digitalização dos negócios em ${cidade.estado_nome} deixou de ser diferencial para ser necessidade de sobrevivência.`;
+  } else {
+    return `${fraseEstado} ${cidade.nome}, capital de ${estadoInfo.nome}, possui mais de ${cidade.populacao.toLocaleString('pt-BR')} habitantes. Nesse mercado competitivo, o investimento em ${servico.termo} é o que separa negócios que crescem daqueles que estagnam. O consumidor moderno exige experiências digitais fluidas, rápidas e seguras.`;
+  }
+}
+
+function construirDesenvolvimento(cidade, servico, estadoInfo) {
+  const fraseEstado = escolherFrase(estadoInfo.frases, gerarHash(cidade.estado + servico.slug + 'dev'));
+  const caracteristica = estadoInfo.caracteristicas[gerarHash(cidade.slug) % estadoInfo.caracteristicas.length];
+  
+  const isPequena = cidade.populacao < 100000;
+  
+  if (isPequena) {
+    return `A AC Agência Digital compreende a realidade do mercado em ${cidade.nome} e ${estadoInfo.nome}. Desenvolvemos soluções de ${servico.termo} com código otimizado para conversão e retenção de clientes locais. Sem as taxas abusivas de marketplaces, sua empresa mantém o controle total da operação e dos dados. ${caracteristica.charAt(0).toUpperCase() + caracteristica.slice(1)} é um dos destaques da economia regional que pode se beneficiar da transformação digital.`;
+  } else {
+    return `Na AC Agência Digital, entregamos arquiteturas robustas capazes de suportar milhares de acessos simultâneos. Nossa experiência com projetos como o MarApp delivery e MaraTaxi garante que sua solução em ${cidade.nome} será escalável e confiável. Você mantém o controle total: sem comissões de plataformas terceirizadas, com integração Pix nativa e painel administrativo completo. ${caracteristica.charAt(0).toUpperCase() + caracteristica.slice(1)} é a base econômica que sustenta investimentos tecnológicos de sucesso em ${estadoInfo.nome}.`;
+  }
+}
+
+function construirSEO(cidade, servico, estadoInfo) {
+  const regionais = [
+    `dominando as buscas locais no Google`,
+    `posicionando sua marca no topo das pesquisas`,
+    `atraindo clientes qualificados da região`,
+    `aumentando sua visibilidade online`,
+    `convertendo visitantes em clientes reais`
+  ];
+  const regional = regionais[gerarHash(cidade.slug + 'seo') % regionais.length];
+  
+  return `Implementamos engenharia de SEO diretamente no código-fonte para que sua empresa${regional} em ${cidade.nome} e região. Carregamento ultrarrápido, dados estruturados para Google e experiência do usuário premium são alguns dos diferenciais que garantem melhores posições nos rankings de busca.`;
+}
 
 export default async function PaginaDinamicaSeo({ params }) {
   const parametros = await params;
@@ -18,27 +71,26 @@ export default async function PaginaDinamicaSeo({ params }) {
     );
   }
 
+  const estadoInfo = estados[cidadeValidada.estado] || {
+    nome: cidadeValidada.estado_nome,
+    regiao: 'Brasil',
+    frases: [`O mercado brasileiro está em plena expansão digital.`],
+    caracteristicas: ['economia diversificada']
+  };
+
   const servicoFormatado = servicoValidado.termo
     .split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 
-  let introTexto = "";
-  let desenvolvimentoTexto = "";
-
-  if (cidadeValidada.populacao < 100000) {
-    introTexto = `Para empreendedores em ${cidadeValidada.nome}, a digitalização deixou de ser um luxo para se tornar uma necessidade de sobrevivência. Atuando em um mercado com cerca de ${cidadeValidada.populacao.toLocaleString('pt-BR')} habitantes, empresas que investem em ${servicoValidado.termo} conseguem monopolizar a atenção do público local em ${cidadeValidada.estado_nome}, eliminando a concorrência que ainda opera no papel ou apenas pelo WhatsApp.`;
-    desenvolvimentoTexto = `A AC Agência Digital entende a dinâmica econômica da região de ${cidadeValidada.nome}. Nossa engenharia de software permite que você tenha soluções de alto nível, semelhantes aos nossos cases de sucesso como o MarApp delivery ou ecossistemas de mobilidade inspirados no MaraTaxi. Tudo isso sem pagar comissões absurdas para plataformas terceirizadas. O código é focado em conversão e retenção de clientes na sua cidade.`;
-  } else {
-    introTexto = `A alta densidade e a concorrência feroz em ${cidadeValidada.nome} exigem uma infraestrutura tecnológica impecável. Com uma população de mais de ${cidadeValidada.populacao.toLocaleString('pt-BR')} pessoas, o investimento estratégico em ${servicoValidado.termo} é o diferencial entre um negócio que escala em ${cidadeValidada.estado_nome} e um que estagna. O consumidor moderno na região exige velocidade, segurança e uma interface premium.`;
-    desenvolvimentoTexto = `Na AC Agência Digital, desenvolvemos arquiteturas preparadas para milhares de requisições simultâneas. Sistemas robustos e escaláveis (como os ecossistemas do MaraTaxi e MarApp) são a nossa especialidade. Entregamos a você o controle absoluto da sua operação em ${cidadeValidada.nome}: sem taxas abusivas de marketplaces, com integrações avançadas de pagamento via Pix e painéis de gestão que colocam o poder de decisão de volta nas suas mãos.`;
-  }
+  const introTexto = construirIntro(cidadeValidada, servicoValidado, estadoInfo);
+  const desenvolvimentoTexto = construirDesenvolvimento(cidadeValidada, servicoValidado, estadoInfo);
+  const seoTexto = construirSEO(cidadeValidada, servicoValidado, estadoInfo);
 
   return (
     <div className="bg-[#020617] text-[#e5e7eb] font-sans min-h-screen selection:bg-[#00c2ff] selection:text-white">
       <style dangerouslySetInnerHTML={{__html: `html { scroll-behavior: smooth; }`}} />
 
-      {/* HEADER */}
       <header className="sticky top-0 backdrop-blur-md bg-[#020617]/80 flex justify-between items-center py-4 px-6 md:px-12 border-b border-white/5 z-50">
         <img 
           src="https://portifolio.abraaocosta.com.br/wp-content/uploads/2024/03/abraao-costa-logo-ac-agencia-digital.webp" 
@@ -52,13 +104,12 @@ export default async function PaginaDinamicaSeo({ params }) {
         </nav>
       </header>
 
-      {/* HERO SECTION */}
       <section id="topo" className="pt-20 pb-20 px-6 text-center bg-[radial-gradient(circle_at_top,#1e3a8a,#020617)]">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight max-w-5xl mx-auto text-white">
           {servicoFormatado} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066ff] to-[#00c2ff]">em {cidadeValidada.nome}</span>
         </h1>
         <p className="max-w-3xl mx-auto text-[#cbd5f5] text-lg md:text-xl leading-relaxed mb-10">
-          Escale o seu faturamento em {cidadeValidada.estado_nome} com tecnologia de ponta e sistemas livres de taxas abusivas.
+          Escale o seu faturamento em {estadoInfo.nome} com tecnologia de ponta e sistemas livres de taxas abusivas.
         </p>
         <a 
           href={`https://wa.me/5598983233310?text=Olá Abraão, tenho interesse no serviço de ${servicoFormatado} em ${cidadeValidada.nome} - ${cidadeValidada.estado}`}
@@ -69,10 +120,8 @@ export default async function PaginaDinamicaSeo({ params }) {
         </a>
       </section>
 
-      {/* MAIN LAYOUT */}
       <main className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10">
         
-        {/* CONTEÚDO PRINCIPAL (ARTIGO) */}
         <article className="bg-[#0f172a] p-8 md:p-10 rounded-2xl border border-white/5 shadow-2xl">
           <div className="w-full aspect-video rounded-xl overflow-hidden shadow-2xl mb-10 border border-white/10">
             <iframe 
@@ -89,13 +138,10 @@ export default async function PaginaDinamicaSeo({ params }) {
           <h2 className="text-2xl font-bold text-white mb-6 border-l-4 border-[#00c2ff] pl-4">A Estratégia Tecnológica</h2>
           <p className="text-lg leading-relaxed text-[#94a3b8] mb-8">{desenvolvimentoTexto}</p>
 
-          <h2 className="text-2xl font-bold text-white mb-4">Alta Performance e SEO Local para {cidadeValidada.estado}</h2>
-          <p className="text-lg leading-relaxed text-[#94a3b8] mb-8">
-            Nós aplicamos engenharia de SEO diretamente no código-fonte para que a sua empresa domine as pesquisas do Google na região de {cidadeValidada.nome}. Através de estratégias de carregamento ultrarrápido, garantimos a melhor experiência para o seu usuário.
-          </p>
+          <h2 className="text-2xl font-bold text-white mb-4">Alta Performance e SEO Local para {estadoInfo.nome}</h2>
+          <p className="text-lg leading-relaxed text-[#94a3b8] mb-8">{seoTexto}</p>
         </article>
 
-        {/* ASIDE (BARRA LATERAL) */}
         <aside className="space-y-8">
           <div className="bg-[#0f172a] p-8 rounded-2xl border border-white/5 shadow-xl sticky top-28">
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
@@ -131,7 +177,6 @@ export default async function PaginaDinamicaSeo({ params }) {
 
       </main>
 
-      {/* SEÇÃO GOOGLE MEU NEGÓCIO (PROVA SOCIAL) */}
       <section className="max-w-7xl mx-auto px-6 mb-20">
         <div className="bg-gradient-to-r from-[#0f172a] to-[#1e293b] p-8 md:p-12 rounded-2xl border border-white/5 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-center md:text-left">
@@ -156,11 +201,9 @@ export default async function PaginaDinamicaSeo({ params }) {
         </div>
       </section>
 
-      {/* FOOTER MEGA COMPLETO */}
       <footer className="bg-[#020617] pt-16 pb-8 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
-          {/* Coluna 1: Marca */}
           <div>
             <img 
               src="https://portifolio.abraaocosta.com.br/wp-content/uploads/2024/03/abraao-costa-logo-ac-agencia-digital.webp" 
@@ -170,27 +213,15 @@ export default async function PaginaDinamicaSeo({ params }) {
             <p className="text-[#64748b] text-sm leading-relaxed mb-6">
               Transformando ideias em sistemas de alta performance. Desenvolvemos aplicativos, sites e estratégias digitais que escalam resultados e dominam o mercado.
             </p>
-            {/* Redes Sociais */}
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/abraaocostaof/" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">
-                IG
-              </a>
-              <a href="https://www.youtube.com/@abraaocostaoficial/videos" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">
-                YT
-              </a>
-              <a href="https://www.linkedin.com/in/abra%C3%A3o-ara%C3%BAjo-rei-dos-aplicativos-06b858a8/" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">
-                IN
-              </a>
-              <a href="https://www.facebook.com/abraao.araujo.9400" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">
-                FB
-              </a>
-              <a href="https://x.com/abraaocostaof" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">
-                X
-              </a>
+              <a href="https://www.instagram.com/abraaocostaof/" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">IG</a>
+              <a href="https://www.youtube.com/@abraaocostaoficial/videos" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">YT</a>
+              <a href="https://www.linkedin.com/in/abra%C3%A3o-ara%C3%BAjo-rei-dos-aplicativos-06b858a8/" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">IN</a>
+              <a href="https://www.facebook.com/abraao.araujo.9400" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">FB</a>
+              <a href="https://x.com/abraaocostaof" target="_blank" className="text-[#94a3b8] hover:text-[#00c2ff] transition-colors">X</a>
             </div>
           </div>
 
-          {/* Coluna 2: Institucional */}
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Institucional</h4>
             <ul className="space-y-3 text-[#94a3b8] text-sm">
@@ -203,7 +234,6 @@ export default async function PaginaDinamicaSeo({ params }) {
             </ul>
           </div>
 
-          {/* Coluna 3: Nossas Soluções */}
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Nossas Soluções</h4>
             <ul className="space-y-3 text-[#94a3b8] text-sm">
@@ -214,7 +244,6 @@ export default async function PaginaDinamicaSeo({ params }) {
             </ul>
           </div>
 
-          {/* Coluna 4: Contato Direto */}
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Atendimento</h4>
             <ul className="space-y-4 text-[#94a3b8] text-sm">
@@ -231,7 +260,6 @@ export default async function PaginaDinamicaSeo({ params }) {
           
         </div>
 
-        {/* Linha Legal e Direitos */}
         <div className="max-w-7xl mx-auto px-6 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#64748b]">
           <p>© 2026 AC Agência Digital - Abraão Araújo. Todos os direitos reservados.</p>
           <div className="flex gap-6">
@@ -242,7 +270,6 @@ export default async function PaginaDinamicaSeo({ params }) {
         </div>
       </footer>
 
-      {/* BOTÕES FLUTUANTES MANTIDOS */}
       <a 
         href="#topo" 
         className="fixed bottom-[90px] right-6 bg-[#0f172a] hover:bg-[#1e293b] text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg border border-white/10 transition-colors z-50"

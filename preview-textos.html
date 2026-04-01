@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview - Textos Dinâmicos por Região</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, sans-serif; background: #0f172a; color: #e5e7eb; padding: 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #00c2ff; margin-bottom: 1rem; }
+        .info { background: #1e293b; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; }
+        .comparacao { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+        .card { background: #1e293b; border-radius: 12px; padding: 1.5rem; border: 1px solid #334155; }
+        .card h2 { color: #fff; margin-bottom: 1rem; font-size: 1.2rem; }
+        .card.sem-variavel { border-color: #ef4444; }
+        .card.com-variavel { border-color: #22c55e; }
+        .card h2 span { font-size: 0.8rem; padding: 0.2rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; }
+        .card.sem-variavel h2 span { background: #ef444440; color: #fca5a5; }
+        .card.com-variavel h2 span { background: #22c55e40; color: #86efac; }
+        .texto { background: #020617; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.6; }
+        .texto h3 { color: #00c2ff; font-size: 1rem; margin-bottom: 0.5rem; }
+        .texto p { color: #94a3b8; }
+        .tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .tab { background: #334155; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
+        .tab.active { background: #00c2ff; color: #000; }
+        .exemplo { display: none; }
+        .exemplo.active { display: block; }
+        .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-top: 0.5rem; }
+        .badge.norte { background: #3b82f620; color: #60a5fa; }
+        .badge.nordeste { background: #eab30820; color: #facc15; }
+        .badge.sudeste { background: #a855f720; color: #d8b4fe; }
+        .badge.sul { background: #22c55e20; color: #86efac; }
+        .badge.centro-oeste { background: #f9731620; color: #fdba74; }
+        hr { border: none; border-top: 1px solid #334155; margin: 1rem 0; }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+        .stat { background: #1e293b; padding: 1rem; border-radius: 8px; text-align: center; }
+        .stat .num { font-size: 2rem; font-weight: bold; color: #00c2ff; }
+        .stat .label { font-size: 0.85rem; color: #94a3b8; }
+        .regioes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 2rem; }
+        .regiao { background: #1e293b; padding: 1rem; border-radius: 8px; }
+        .regiao h4 { margin-bottom: 0.5rem; }
+        .regiao ul { font-size: 0.85rem; color: #94a3b8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Preview: Textos Dinâmicos por Região</h1>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="num">85</div>
+                <div class="label">Termos atuais</div>
+            </div>
+            <div class="stat">
+                <div class="num">+60</div>
+                <div class="label">Novos termos</div>
+            </div>
+            <div class="stat">
+                <div class="num">145</div>
+                <div class="label">Total termos</div>
+            </div>
+            <div class="stat">
+                <div class="num">807.650</div>
+                <div class="label">Total URLs</div>
+            </div>
+        </div>
+
+        <h2 style="color:#fff;margin:2rem 0 1rem;">1. Exemplo: "criação de aplicativos em {cidade}"</h2>
+        
+        <div class="comparacao">
+            <div class="card sem-variavel">
+                <h2>SEM variação por região <span>ATUAL</span></h2>
+                <div class="texto">
+                    <h3>São Luís - MA</h3>
+                    <p>Para empreendedores em São Luís, a digitalização deixou de ser um luxo para se tornar uma necessidade de sobrevivência. Atuando em um mercado com cerca de 1.099.000 habitantes, empresas que investem em criação de aplicativos conseguem monopolizar a atenção do público local no MA, eliminando a concorrência que ainda opera no papel ou apenas pelo WhatsApp.</p>
+                </div>
+                <div class="texto">
+                    <h3>Belo Horizonte - MG</h3>
+                    <p>Para empreendedores em Belo Horizonte, a digitalização deixou de ser um luxo para se tornar uma necessidade de sobrevivência. Atuando em um mercado com cerca de 2.315.000 habitantes, empresas que investem em criação de aplicativos conseguem monopolizar a atenção do público local em MG, eliminando a concorrência que ainda opera no papel ou apenas pelo WhatsApp.</p>
+                </div>
+                <div class="texto">
+                    <h3>São Paulo - SP</h3>
+                    <p>A alta densidade e a concorrência feroz em São Paulo exigem uma infraestrutura tecnológica impecável. Com uma população de mais de 12.000.000 de pessoas, o investimento estratégico em criação de aplicativos é o diferencial entre um negócio que escala em SP e um que estagna.</p>
+                </div>
+                <p style="color:#fca5a5;font-size:0.85rem;">⚠️ Texto similar, apenas troca cidade/estado/população</p>
+            </div>
+
+            <div class="card com-variavel">
+                <h2>COM variação por região <span>PROPOSTO</span></h2>
+                <div class="tabs">
+                    <button class="tab active" onclick="showEx('norte')">Norte</button>
+                    <button class="tab" onclick="showEx('nordeste')">Nordeste</button>
+                    <button class="tab" onclick="showEx('sudeste')">Sudeste</button>
+                    <button class="tab" onclick="showEx('sul')">Sul</button>
+                    <button class="tab" onclick="showEx('centro')">Centro-Oeste</button>
+                </div>
+                
+                <div id="ex-norte" class="exemplo active">
+                    <div class="texto">
+                        <h3>Manaus - AM <span class="badge norte">NORTE</span></h3>
+                        <p>A região Norte do Brasil, com sua vastidão amazônica e desafios logísticos únicos, está passando por uma revolução digital. Em Manaus, capital do Amazonas e polo tecnológico da Free Trade Zone, empresas que investem em <strong>criação de aplicativos</strong> estão criando soluções que conectam comunidades ribeirinhas e transformam o comércio local. O ecossistema tech de Manaus cresce 23% ao ano, impulsionado por incentivos fiscais e startups inovadoras.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>Belém - PA</h3>
+                        <p>Belém, a capital paraense, é o gateway da Amazônia para o resto do mundo. Com o Porto de Vila do Conde e a Zona Franca, o investimento em <strong>aplicativos sob medida</strong> está revolucionando logística, comércio e serviços na região metropolitana. Empreendedores paraenses estão dominando o mercado digital do Arco Norte com soluções tecnológicas pioneiras.</p>
+                    </div>
+                </div>
+
+                <div id="ex-nordeste" class="exemplo">
+                    <div class="texto">
+                        <h3>Fortaleza - CE <span class="badge nordeste">NORDESTE</span></h3>
+                        <p>O Ceará se consolidou como polo tech do Nordeste, e Fortaleza lidera essa transformação. Com o Porto do Pecém e universidades de referência, a capital cearense se tornou berço de <strong>aplicativos inovadores</strong> que resolvem problemas locais. O ecossistema startupeiro de Fortaleza é o 3º maior do Brasil, crescendo 45% em 2024 com soluções para delivery, mobilidade e serviços.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>Recife - PE</h3>
+                        <p>Recife tem o maior polo de tecnologia do Norte/Nordeste, com o Porto Digital reunindo mais de 400 empresas. A capital pernambucana é referência em <strong>desenvolvimento de apps para negócios locais</strong>, com forte atuação em fintechs, healthtechs e soluções de commerce. O mercado digital recifense valoriza profissionais e empresas que entendem a dinâmica do comércio nordestino.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>São Luís - MA</h3>
+                        <p>São Luís, única capital com influência francesa na arquitetura, está se tornando um polo de <strong>tecnologia para o Baixo Parnaíba</strong>. Pequenos e médios negócios em São Luís estão descobrindo que um app personalizado é o caminho para competir com grandes marketplaces sem pagar comissões abusivas. O consumidor maranhense valoriza atendimento local e delivery rápido.</p>
+                    </div>
+                </div>
+
+                <div id="ex-sudeste" class="exemplo">
+                    <div class="texto">
+                        <h3>São Paulo - SP <span class="badge sudeste">SUDESTE</span></h3>
+                        <p>São Paulo é o maior mercado digital da América Latina. Com mais de 12 milhões de habitantes, a capital paulistana exige <strong>aplicativos de alto desempenho</strong> capazes de suportar milhares de acessos simultâneos. A concorrência é feroz: ou sua empresa tem presença digital premium, ou fica invisível. Desenvolvemos soluções escaláveis que dominam o SEO local e convertem visitantes em clientes.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>Rio de Janeiro - RJ</h3>
+                        <p>O Rio de Janeiro combina lifestyle costeiro com negócios de alto impacto. A cidade é palco de <strong>apps de delivery, mobilidade e turismo</strong> que aproveitam a infraestrutura portuária e aeroportuária. Empreendedores cariocas estão na vanguarda do <strong>desenvolvimento de plataformas white label</strong> que rodam em todo o Brasil.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>Belo Horizonte - MG</h3>
+                        <p>Belo Horizonte é o laboratório de testes ideal para novos produtos digitais no Sudeste. Com custos menores que SP/RJ e ecossistema tech em crescimento, a capital mineira é perfeita para <strong>validação de MVPs e apps de delivery regionais</strong>. Desenvolvemos soluções que escalam de BH para todo o Brasil com arquiteturas modernas e código limpo.</p>
+                    </div>
+                </div>
+
+                <div id="ex-sul" class="exemplo">
+                    <div class="texto">
+                        <h3>Curitiba - PR <span class="badge sul">SUL</span></h3>
+                        <p>Curitiba é referência em urbanismo e qualidade de vida, e agora se destaca em tecnologia. A capital paranaense abriga empresas de <strong>logística, mobility e commerce tech</strong> queexportam soluções para o Brasil inteiro. O inverno rigoroso do Sul também impulsiona apps de delivery e serviços, com consumidores valorizando conveniência digital.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>Florianópolis - SC</h3>
+                        <p>Florianópolis, a Ilha da Magia, é também o Silicon Valley brasileiro. Com beaches e universidades de excelência, a capital catarinense concentra <strong>startups de impacto e empresas de software</strong> que desenvolvem desde apps de delivery até plataformas de mobilidade. O ecossistema tech de FLN é selecionado nacional pela qualidade de vida e inovação.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>Porto Alegre - RS</h3>
+                        <p>Porto Alegre é o hub logístico do Mercosul, com conexão direta para Argentina e Uruguai. Empresas gaúchas estão investindo em <strong>aplicativos de delivery e commerce</strong> que aproveitam a infraestrutura portuária e a tradição comercial do Sul. O consumidor porto-alegrense valoriza reliability e suporte em português.</p>
+                    </div>
+                </div>
+
+                <div id="ex-centro" class="exemplo">
+                    <div class="texto">
+                        <h3>Brasília - DF <span class="badge centro-oeste">CENTRO-OESTE</span></h3>
+                        <p>Brasília tem o maior poder aquisitivo per capita do Brasil e público digital engajado. A capital federal é palco de <strong>apps para serviços públicos, delivery e B2B</strong> que atendem desde funcionários públicos até consumidores do Lago Sul. O mercado de Brasília valoriza qualidade, segurança e soluções que otimizam tempo.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>Goiânia - GO</h3>
+                        <p>Goiânia é o coração do Centro-Oeste brasileiro, com economia diversificada entre agronegócio, serviços e tecnologia. A capital goiana está crescendo em <strong>apps de delivery, logística e sistemas para comércios locais</strong>, aproveitando a posição estratégica entre Norte, Nordeste e Sudeste.</p>
+                    </div>
+                    <div class="texto">
+                        <h3>Cuiabá - MT</h3>
+                        <p>Cuiabá é a porta de entrada do Pantanal e polo do agronegócio digital. Com a expansão da fronteira agrícola, a capital mato-grossense precisa de <strong>soluções tecnológicas para gestão de fazendas, delivery regional e serviços</strong> que conectem o campo à cidade. O mercado cuiabano valoriza inovação com pragmatismo.</p>
+                    </div>
+                </div>
+
+                <p style="color:#86efac;font-size:0.85rem;">✓ Texto único por região com contexto local real</p>
+            </div>
+        </div>
+
+        <h2 style="color:#fff;margin:2rem 0 1rem;">2. Exemplo: "sistema de delivery para pizzaria em {cidade}"</h2>
+        
+        <div class="comparacao">
+            <div class="card sem-variavel">
+                <h2>SEM variação <span>GENÉRICO</span></h2>
+                <div class="texto">
+                    <h3>Todas as cidades</h3>
+                    <p>A alta densidade e a concorrência feroz em {cidade} exigem uma infraestrutura tecnológica impecável. Com uma população de mais de {habitantes} pessoas, o investimento estratégico em sistema de delivery para pizzaria é o diferencial entre um negócio que escala em {estado} e um que estagna.</p>
+                </div>
+                <p style="color:#fca5a5;font-size:0.85rem;">⚠️ Mesmo texto para todas as pizzarias do Brasil</p>
+            </div>
+
+            <div class="card com-variavel">
+                <h2>COM variação <span>ESPECÍFICO</span></h2>
+                <div class="tabs">
+                    <button class="tab active" onclick="showEx2('nordeste')">Nordeste</button>
+                    <button class="tab" onclick="showEx2('sudeste')">Sudeste</button>
+                </div>
+                
+                <div id="ex2-nordeste" class="exemplo active">
+                    <div class="texto">
+                        <h3>Pizzaria em Fortaleza - CE</h3>
+                        <p>A noite de sexta em Fortaleza não é completa sem uma pizza. O mercado de <strong>pizzarias em Fortaleza</strong> é extremamente competitivo, com mais de 800 estabelecimentos. Um <strong>sistema de delivery próprio</strong> elimina comissões de 15-25% dos apps agregadores. Desenvolvemos para pizzarias do Aldeota, Meireles e Dionísio Torres funcionalidades específicas: integração com motoboys locais, cardápio digital com sabores regionais como pizza de camarão e castanha.</p>
+                    </div>
+                </div>
+
+                <div id="ex2-sudeste" class="exemplo">
+                    <div class="texto">
+                        <h3>Pizzaria em São Paulo - SP</h3>
+                        <p>São Paulo é a capital mundial da pizza, com tradição italiana na Vila Madalena e Pinheiros. O mercado é brutalmente competitivo: horário de pico significa 200+ pedidos simultâneos. Um <strong>sistema de delivery para pizzarias paulistas</strong> precisa aguentar essa escala. Desenvolvemos com painel administrativo completo, gestão de motoboys, integração com iFood (para complementar, não depender) e automação de WhatsApp para confirmar pedidos.</p>
+                    </div>
+                </div>
+
+                <p style="color:#86efac;font-size:0.85rem;">✓ Texto específico com contexto do mercado local</p>
+            </div>
+        </div>
+
+        <h2 style="color:#fff;margin:2rem 0 1rem;">3. Estados por região</h2>
+        <div class="regioes">
+            <div class="regiao">
+                <h4>🟢 Norte <span style="color:#60a5fa">(7 estados)</span></h4>
+                <ul>
+                    <li>AC - Acre</li>
+                    <li>AP - Amapá</li>
+                    <li>AM - Amazonas</li>
+                    <li>PA - Pará</li>
+                    <li>RO - Rondônia</li>
+                    <li>RR - Roraima</li>
+                    <li>TO - Tocantins</li>
+                </ul>
+            </div>
+            <div class="regiao">
+                <h4>🟡 Nordeste <span style="color:#facc15">(9 estados)</span></h4>
+                <ul>
+                    <li>AL - Alagoas</li>
+                    <li>BA - Bahia</li>
+                    <li>CE - Ceará</li>
+                    <li>MA - Maranhão</li>
+                    <li>PB - Paraíba</li>
+                    <li>PE - Pernambuco</li>
+                    <li>PI - Piauí</li>
+                    <li>RN - Rio Grande do Norte</li>
+                    <li>SE - Sergipe</li>
+                </ul>
+            </div>
+            <div class="regiao">
+                <h4>🟣 Sudeste <span style="color:#d8b4fe">(4 estados)</span></h4>
+                <ul>
+                    <li>ES - Espírito Santo</li>
+                    <li>MG - Minas Gerais</li>
+                    <li>RJ - Rio de Janeiro</li>
+                    <li>SP - São Paulo</li>
+                </ul>
+            </div>
+            <div class="regiao">
+                <h4>🟢 Sul <span style="color:#86efac">(3 estados)</span></h4>
+                <ul>
+                    <li>PR - Paraná</li>
+                    <li>RS - Rio Grande do Sul</li>
+                    <li>SC - Santa Catarina</li>
+                </ul>
+            </div>
+            <div class="regiao">
+                <h4>🟠 Centro-Oeste <span style="color:#fdba74">(4 estados)</span></h4>
+                <ul>
+                    <li>DF - Distrito Federal</li>
+                    <li>GO - Goiás</li>
+                    <li>MT - Mato Grosso</li>
+                    <li>MS - Mato Grosso do Sul</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top:3rem;padding:2rem;background:#1e293b;border-radius:12px;">
+            <h2 style="color:#fff;margin-bottom:1rem;">Resumo da proposta</h2>
+            <ul style="color:#94a3b8;line-height:2;">
+                <li>✓ <strong>5 variações de texto</strong> (uma por região) = 5× mais uniqueness</li>
+                <li>✓ <strong>Conteúdo específico por estado</strong> (27 variações)</li>
+                <li>✓ <strong>H1 único</strong>: "Criação de aplicativos em São Luís" (já é único)</li>
+                <li>✓ <strong>Schema markup dinâmico</strong> por cidade/estado</li>
+                <li>✓ <strong>Meta descriptions únicas</strong> para cada URL</li>
+                <li>✓ <strong>Canonical tags</strong> apontando para a página principal do serviço</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function showEx(id) {
+            document.querySelectorAll('.exemplo').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+            document.getElementById('ex-' + id).classList.add('active');
+            event.target.classList.add('active');
+        }
+        
+        function showEx2(id) {
+            document.querySelectorAll('#ex2-nordeste, #ex2-sudeste').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tabs .tab').forEach(el => el.classList.remove('active'));
+            document.getElementById('ex2-' + id).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

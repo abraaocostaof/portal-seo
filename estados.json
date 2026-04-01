@@ -1,0 +1,326 @@
+{
+  "AC": {
+    "nome": "Acre",
+    "regiao": "Norte",
+    "capital": "Rio Branco",
+    "populacao": 906876,
+    "caracteristicas": ["centro da Amazônia", "fronteira com Peru e Bolívia", "economia baseada em floresta e pecuária"],
+    "frases": [
+      "O Acre, coração da Amazônia, está desbravando o mundo digital com soluções que conectam o campo à cidade.",
+      "No Acre, a tecnologia é a ponte entre a floresta e os negócios do futuro.",
+      "Rio Branco e as cidades acreanas estãocolocando o estado no mapa digital do Brasil."
+    ]
+  },
+  "AL": {
+    "nome": "Alagoas",
+    "regiao": "Nordeste",
+    "capital": "Maceió",
+    "populacao": 3365351,
+    "caracteristicas": ["litoral paradisíaco", "economia do açúcar e turismo", "polo industrial de chemicals"],
+    "frases": [
+      "Alagoas, com suas praias de sonho em Maceió, está revolucionando o comércio local com apps sob medida.",
+      "Do açúcar ao código, Alagoas está virando referência em inovação no Nordeste brasileiro.",
+      "Empresas alagoanas estão dominando o mercado digital com soluções que valorizam o comércio local."
+    ]
+  },
+  "AP": {
+    "nome": "Amapá",
+    "regiao": "Norte",
+    "capital": "Macapá",
+    "populacao": 877613,
+    "caracteristicas": ["único estado cortado pela Linha do Equador", "forte presença militar", "biodiversidade única"],
+    "frases": [
+      "O Amapá, cortado pela Linha do Equador, está levando tecnologia digital para todos os cantos do estado.",
+      "Macapá e o Amapá estão conectando o Brasil ao mundo digital com soluções personalizadas.",
+      "O estado mais preservado do Brasil também quer ser um dos mais digitais."
+    ]
+  },
+  "AM": {
+    "nome": "Amazonas",
+    "regiao": "Norte",
+    "capital": "Manaus",
+    "populacao": 4269995,
+    "caracteristicas": ["Zona Franca de Manaus", "polo tecnológico da Amazônia", "Free Trade Zone"],
+    "frases": [
+      "Manaus, o Silicon Valley da Amazônia, pulsa com inovação tecnológica e oportunidades digitais.",
+      "O Amazonas, berço da floresta, estádeixandode ser apenas natureza para ser também tecnologia.",
+      "A Zona Franca de Manaus não é só indústria - o polo tech amazonense cresce 23% ao ano."
+    ]
+  },
+  "BA": {
+    "nome": "Bahia",
+    "regiao": "Nordeste",
+    "capital": "Salvador",
+    "populacao": 14985284,
+    "caracteristicas": ["maior economia do Nordeste", "turismo e cultura", "polo petroquímico e agro"],
+    "frases": [
+      "A Bahia, coração do Nordeste brasileiro, está transformando cultura em negócios digitais de sucesso.",
+      "De Salvador ao interior, a Bahia está na vanguarda da revolução digital nordestina.",
+      "O estado com maior diversidade cultural do Brasil também está revolucionando seu comércio com tecnologia."
+    ]
+  },
+  "CE": {
+    "nome": "Ceará",
+    "regiao": "Nordeste",
+    "capital": "Fortaleza",
+    "populacao": 9240580,
+    "caracteristicas": ["3º maior ecossistema startup do Brasil", "porto do Pecém", "economia diversificada"],
+    "frases": [
+      "O Ceará se firmou como o polo tech do Nordeste, com Fortaleza liderando a transformação digital.",
+      "Do Porto do Pecém às praias do Ceará, a tecnologia está em todo lugar.",
+      "Fortaleza não é só sol e mar - é o terceiro maior ecossistema de startups do Brasil."
+    ]
+  },
+  "DF": {
+    "nome": "Distrito Federal",
+    "regiao": "Centro-Oeste",
+    "capital": "Brasília",
+    "populacao": 3094325,
+    "caracteristicas": ["maior poder aquisitivo per capita", "funcionários públicos", "polo de serviços e governo"],
+    "frases": [
+      "Brasília tem o maior poder aquisitivo per capita do Brasil - e exige soluções digitais à altura.",
+      "O Distrito Federal é o palco de apps para serviços públicos, delivery e B2B de alta qualidade.",
+      "Empresas de Brasília valorizam qualidade, segurança e soluções que otimizam tempo e recursos."
+    ]
+  },
+  "ES": {
+    "nome": "Espírito Santo",
+    "regiao": "Sudeste",
+    "capital": "Vitória",
+    "populacao": 4108508,
+    "caracteristicas": ["porto de Tubarão", "maior produtor de mármore do Brasil", "economia baseada em mineração e turismo"],
+    "frases": [
+      "O Espírito Santo, com Vitória e sua economia portuária, estádigitalizando o comércio capixaba.",
+      "Do porto de Tubarão às beaches de Guarapari, o ES está em plena revolução digital.",
+      "O estado que alimenta o Brasil com minérios também está alimentando negócios com tecnologia."
+    ]
+  },
+  "GO": {
+    "nome": "Goiás",
+    "regiao": "Centro-Oeste",
+    "capital": "Goiânia",
+    "populacao": 7206583,
+    "caracteristicas": ["coração geográfico do Brasil", "agronegócio", "crescimento urbano acelerado"],
+    "frases": [
+      "Goiás, coração do Brasil, está crescendo também no mundo digital com soluções sob medida.",
+      "De Goiânia a cidades do interior, Goiás está se destacando na adoção de tecnologia para negócios.",
+      "O estado que alimenta o mundo agora quer dominar também o comércio digital brasileiro."
+    ]
+  },
+  "MA": {
+    "nome": "Maranhão",
+    "regiao": "Nordeste",
+    "capital": "São Luís",
+    "populacao": 7153262,
+    "caracteristicas": ["única capital com herança francesa", "Porto do Itaqui", "Baixada Ocidental"],
+    "frases": [
+      "São Luís, única capital com influência francesa na arquitetura, está se tornando um polo tech do Nordeste.",
+      "O Maranhão, do Itaqui ao interior, está descobrindo que tecnologia é caminho para crescimento.",
+      "O mercado maranhense valoriza atendimento local e soluções que respeitam a cultura local."
+    ]
+  },
+  "MT": {
+    "nome": "Mato Grosso",
+    "regiao": "Centro-Oeste",
+    "capital": "Cuiabá",
+    "populacao": 3567234,
+    "caracteristicas": ["maior produtor de soja do mundo", "Pantanal", "fronteira agrícola"],
+    "frases": [
+      "Mato Grosso alimenta o mundo - e agora também quer alimentaro comercio digital brasileiro.",
+      "Cuiabá é a porta de entrada do Pantanal e polo do agronegócio que agora abraça a tecnologia.",
+      "O estado que bate recordes no campo também quer bater recordes no mundo digital."
+    ]
+  },
+  "MS": {
+    "nome": "Mato Grosso do Sul",
+    "regiao": "Centro-Oeste",
+    "capital": "Campo Grande",
+    "populacao": 2830188,
+    "caracteristicas": ["Pantanal sul-mato-grossense", "pecuária", "estratégia logística"],
+    "frases": [
+      "Mato Grosso do Sul, com Campo Grande como hub, está conectando o Centro-Oeste ao mundo digital.",
+      "Do Pantanal às cidades digitais, MS está transformando tradição em inovação.",
+      "O estado que protege a natureza também quer proteger negócios com tecnologia de ponta."
+    ]
+  },
+  "MG": {
+    "nome": "Minas Gerais",
+    "regiao": "Sudeste",
+    "capital": "Belo Horizonte",
+    "populacao": 21411923,
+    "caracteristicas": ["segunda maior economia", "café e mineração", "laboratório de testes do Brasil"],
+    "frases": [
+      "Minas Gerais, o estado que mais gera empregos, está liderando a transformação digital de MG.",
+      "Belo Horizonte é o laboratório ideal para testar novos produtos digitais antes de escalar.",
+      "Do café ao código, Minas está mostrando que inovação está no DNA do mineiro."
+    ]
+  },
+  "PA": {
+    "nome": "Pará",
+    "regiao": "Norte",
+    "capital": "Belém",
+    "populacao": 8777124,
+    "caracteristicas": ["maior estado do Norte", "Porto de Vila do Conde", "Arco Norte"],
+    "frases": [
+      "O Pará, gateway da Amazônia, está se tornando hub digital do Arco Norte brasileiro.",
+      "Belém, com o Porto de Vila do Conde, é a porta da Amazônia para o mundo dos negócios digitais.",
+      "O estado paraense está dominando o mercado digital do Norte com soluções pioneiras."
+    ]
+  },
+  "PB": {
+    "nome": "Paraíba",
+    "regiao": "Nordeste",
+    "capital": "João Pessoa",
+    "populacao": 4059905,
+    "caracteristicas": ["costa mais oriental das Américas", "indústria电信", "turismo de negócios"],
+    "frases": [
+      "A Paraíba, no extremo leste do Brasil, está também no extremo da inovação nordestina.",
+      "João Pessoa, capital mais oriental das Américas, está virando referência em tech paraibana.",
+      "Do Litoral Sul ao Seridó, a Paraíba está digitalizando seus negócios com sucesso."
+    ]
+  },
+  "PR": {
+    "nome": "Paraná",
+    "regiao": "Sul",
+    "capital": "Curitiba",
+    "populacao": 11597484,
+    "caracteristicas": ["referência em urbanismo", "agroindústria", "polo logístico"],
+    "frases": [
+      "Curitiba, referência mundial em urbanismo, agora quer ser referência em tecnologia também.",
+      "O Paraná é o corredor logístico do Brasil - e agora também quer ser corredor digital.",
+      "Do inverno rigoroso às solutionstech, o Sul está aquecendo o mercado com inovação."
+    ]
+  },
+  "PE": {
+    "nome": "Pernambuco",
+    "regiao": "Nordeste",
+    "capital": "Recife",
+    "populacao": 9674793,
+    "caracteristicas": ["Porto Digital", "3º maior ecossistema startup", "Zona da Mata"],
+    "frases": [
+      "O Recife tem o maior polo de tecnologia do Norte/Nordeste - o Porto Digital reúne mais de 400 empresas.",
+      "Pernambuco está exportando inovação: fintechs, healthtechs e solutions de commerce saem daqui.",
+      "Do Frevo ao código, Pernambuco está mostrando que o Nordeste também é tech."
+    ]
+  },
+  "PI": {
+    "nome": "Piauí",
+    "regiao": "Nordeste",
+    "capital": "Teresina",
+    "populacao": 3289290,
+    "caracteristicas": ["menor economia do Nordeste", "agricultura familiar", "crescimento tech"],
+    "frases": [
+      "O Piauí, mesmo com menor economia do Nordeste, está crescendo forte no mundo digital.",
+      "Teresina está se firmando como polo tech do Piauí, conectando o estado ao Brasil digital.",
+      "Do semiárido à inovação, o Piauí está mostrando que tamanho não é documento."
+    ]
+  },
+  "RJ": {
+    "nome": "Rio de Janeiro",
+    "regiao": "Sudeste",
+    "capital": "Rio de Janeiro",
+    "populacao": 17463349,
+    "caracteristicas": ["capital cultural", "turismo", "petróleo e gás"],
+    "frases": [
+      "O Rio de Janeiro combina lifestyle de praia com negócios de alto impacto tecnológico.",
+      "Da Pós-Ouro Preto ao Pós-Ipanema, o RJ está surfando a onda da transformação digital.",
+      "A cidade que recebe o mundo agora quer que o mundo receba suas soluções digitais."
+    ]
+  },
+  "RN": {
+    "nome": "Rio Grande do Norte",
+    "regiao": "Nordeste",
+    "capital": "Natal",
+    "populacao": 3560903,
+    "caracteristicas": ["maior produtor de petróleo offshore", "potencial eólico", "turismo"],
+    "frases": [
+      "O RN, maior produtor de petróleo offshore, está também gerando energia para o mercado digital.",
+      "Natal, a cidade do Sol, está aquecendo o mercado tech do Rio Grande do Norte.",
+      "Do pré-sal ao pós-código, o RN está diversificando sua economia com tecnologia."
+    ]
+  },
+  "RO": {
+    "nome": "Rondônia",
+    "regiao": "Norte",
+    "capital": "Porto Velho",
+    "populacao": 1815278,
+    "caracteristicas": ["fronteira agrícola da Amazônia", "madeireiras", "hidroelétricas"],
+    "frases": [
+      "Rondônia, fronteira agrícola da Amazônia, está cultivando também o campo digital.",
+      "Porto Velho e Rondônia estão conectando a floresta à economia digital do Brasil.",
+      "O estado que alimenta o Brasil agora quer também nutrir negócios com tecnologia."
+    ]
+  },
+  "RR": {
+    "nome": "Roraima",
+    "regiao": "Norte",
+    "capital": "Boa Vista",
+    "populacao": 652713,
+    "caracteristicas": ["menor estado do Norte", "fronteira com Venezuela", "serra de Pacaraima"],
+    "frases": [
+      "Roraima, o menor estado do Norte, está crescendo grande no mercado digital.",
+      "Boa Vista, capital mais setentrional do Brasil, está virando hub tech da região.",
+      "Da Serra de Pacaraima ao Mundo Digital, RR está construindo pontes tecnológicas."
+    ]
+  },
+  "RS": {
+    "nome": "Rio Grande do Sul",
+    "regiao": "Sul",
+    "capital": "Porto Alegre",
+    "populacao": 11473674,
+    "caracteristicas": ["hub do Mercosul", "gaúchos inovadores", "agro e tecnologia"],
+    "frases": [
+      "Porto Alegre é o hub do Mercosul - e agora também quer ser hub de tecnologia para América Latina.",
+      "O Rio Grande do Sul está conectando Argentina, Uruguai e o mundo ao mercado digital brasileiro.",
+      "Do churrasco ao código, o RS está mostrando que tradição e inovação andam juntas."
+    ]
+  },
+  "SC": {
+    "nome": "Santa Catarina",
+    "regiao": "Sul",
+    "capital": "Florianópolis",
+    "populacao": 7338473,
+    "caracteristicas": ["Silicon Valley brasileiro", "beaches e tech", "indústria de tecnologia"],
+    "frases": [
+      "Florianópolis, a Ilha da Magia, é também o Silicon Valley brasileiro - beaches e code andam juntos.",
+      "Santa Catarina concentra empresas de tecnologia que exportam soluções para o Brasil e o mundo.",
+      "O estado com melhor qualidade de vida também oferece as melhores soluções em tecnologia."
+    ]
+  },
+  "SP": {
+    "nome": "São Paulo",
+    "regiao": "Sudeste",
+    "capital": "São Paulo",
+    "populacao": 46289333,
+    "caracteristicas": ["maior economia da América Latina", "terra de startups", "mercado mais competitivo"],
+    "frases": [
+      "São Paulo é o maior mercado digital da América Latina - e o mais competitivo.",
+      "A capital paulistana exige aplicativos de alto desempenho que suportam milhares de acessos.",
+      "No estado onde a concorrência é brutal, ter presença digital premium é questão de sobrevivência."
+    ]
+  },
+  "SE": {
+    "nome": "Sergipe",
+    "regiao": "Nordeste",
+    "capital": "Aracaju",
+    "populacao": 2338474,
+    "caracteristicas": ["menor estado do Brasil", "petróleo", "turismo de eventos"],
+    "frases": [
+      "Sergipe, o menor estado do Brasil, está provando que tamanho não limita a inovação.",
+      "Aracaju e Sergipe estão crescendo no mercado digital nordestino com soluções sob medida.",
+      "Do Litorâneo ao Sertão, Sergipe está digitalizando negócios com competência."
+    ]
+  },
+  "TO": {
+    "nome": "Tocantins",
+    "regiao": "Norte",
+    "capital": "Palmas",
+    "populacao": 1607363,
+    "caracteristicas": ["estado mais jovem do Brasil", "bicentenário", "agricultura em expansão"],
+    "frases": [
+      "Tocantins, o estado mais jovem do Brasil, está construindo também um futuro digital promissor.",
+      "Palmas, a capital planejada, está se tornando referência em governo digital e negócios online.",
+      "Nascido em 1988, Tocantins agora nasce também para o mundo tech com soluções modernas."
+    ]
+  }
+}

@@ -398,5 +398,245 @@
   {
     "termo": "design de interfaces ui ux para aplicativos",
     "slug": "design-de-interfaces-ui-ux-para-aplicativos"
+  },
+  {
+    "termo": "criacao de aplicativos",
+    "slug": "criacao-de-aplicativos"
+  },
+  {
+    "termo": "desenvolvimento de aplicativos",
+    "slug": "desenvolvimento-de-aplicativos"
+  },
+  {
+    "termo": "empresa de aplicativos",
+    "slug": "empresa-de-aplicativos"
+  },
+  {
+    "termo": "programador de aplicativos",
+    "slug": "programador-de-aplicativos"
+  },
+  {
+    "termo": "desenvolvedor full stack",
+    "slug": "desenvolvedor-full-stack"
+  },
+  {
+    "termo": "criacao de sites profissionais",
+    "slug": "criacao-de-sites-profissionais"
+  },
+  {
+    "termo": "empresa de desenvolvimento web",
+    "slug": "empresa-de-desenvolvimento-web"
+  },
+  {
+    "termo": "agencia de criacao de sites",
+    "slug": "agencia-de-criacao-de-sites"
+  },
+  {
+    "termo": "empresa de software",
+    "slug": "empresa-de-software"
+  },
+  {
+    "termo": "criacao de sistemas personalizados",
+    "slug": "criacao-de-sistemas-personalizados"
+  },
+  {
+    "termo": "criar app delivery para restaurante",
+    "slug": "criar-app-delivery-para-restaurante"
+  },
+  {
+    "termo": "sistema de delivery para pizzaria",
+    "slug": "sistema-de-delivery-para-pizzaria"
+  },
+  {
+    "termo": "aplicativo para farmacia com entregas",
+    "slug": "aplicativo-para-farmacia-com-entregas"
+  },
+  {
+    "termo": "sistema para mercadinho com delivery",
+    "slug": "sistema-para-mercadinho-com-delivery"
+  },
+  {
+    "termo": "aplicativo para loja com entregas",
+    "slug": "aplicativo-para-loja-com-entregas"
+  },
+  {
+    "termo": "criar app para mototaxi",
+    "slug": "criar-app-para-mototaxi"
+  },
+  {
+    "termo": "sistema de transporte privado",
+    "slug": "sistema-de-transporte-privado"
+  },
+  {
+    "termo": "aplicativo tipo uber para motoristas",
+    "slug": "aplicativo-tipo-uber-para-motoristas"
+  },
+  {
+    "termo": "app de entregas para pequenos negocios",
+    "slug": "app-de-entregas-para-pequenos-negocios"
+  },
+  {
+    "termo": "plataforma de delivery para comercio local",
+    "slug": "plataforma-de-delivery-para-comercio-local"
+  },
+  {
+    "termo": "sistema de delivery completo",
+    "slug": "sistema-de-delivery-completo"
+  },
+  {
+    "termo": "aplicativo de delivery pronto",
+    "slug": "aplicativo-de-delivery-pronto"
+  },
+  {
+    "termo": "codigo fonte app delivery",
+    "slug": "codigo-fonte-app-delivery"
+  },
+  {
+    "termo": "script de delivery profissional",
+    "slug": "script-de-delivery-profissional"
+  },
+  {
+    "termo": "sistema tipo uber completo",
+    "slug": "sistema-tipo-uber-completo"
+  },
+  {
+    "termo": "codigo fonte app tipo uber",
+    "slug": "codigo-fonte-app-tipo-uber"
+  },
+  {
+    "termo": "aplicativo de transporte pronto",
+    "slug": "aplicativo-de-transporte-pronto"
+  },
+  {
+    "termo": "plataforma de entregas com app",
+    "slug": "plataforma-de-entregas-com-app"
+  },
+  {
+    "termo": "software de delivery com painel administrativo",
+    "slug": "software-de-delivery-com-painel-administrativo"
+  },
+  {
+    "termo": "app white label delivery",
+    "slug": "app-white-label-delivery"
+  },
+  {
+    "termo": "curso de criacao de aplicativos",
+    "slug": "curso-de-criacao-de-aplicativos"
+  },
+  {
+    "termo": "curso de app delivery",
+    "slug": "curso-de-app-delivery"
+  },
+  {
+    "termo": "curso para criar app tipo uber",
+    "slug": "curso-para-criar-app-tipo-uber"
+  },
+  {
+    "termo": "curso de desenvolvimento full stack",
+    "slug": "curso-de-desenvolvimento-full-stack"
+  },
+  {
+    "termo": "aprender a criar aplicativos do zero",
+    "slug": "aprender-a-criar-aplicativos-do-zero"
+  },
+  {
+    "termo": "curso de programacao para iniciantes",
+    "slug": "curso-de-programacao-para-iniciantes"
+  },
+  {
+    "termo": "curso de sistemas web e mobile",
+    "slug": "curso-de-sistemas-web-e-mobile"
+  },
+  {
+    "termo": "curso de desenvolvimento de apps profissionais",
+    "slug": "curso-de-desenvolvimento-de-apps-profissionais"
+  },
+  {
+    "termo": "treinamento para criar app de delivery",
+    "slug": "treinamento-para-criar-app-de-delivery"
+  },
+  {
+    "termo": "curso completo de criacao de aplicativos",
+    "slug": "curso-completo-de-criacao-de-aplicativos"
+  },
+  {
+    "termo": "como criar um aplicativo de delivery",
+    "slug": "como-criar-um-aplicativo-de-delivery"
+  },
+  {
+    "termo": "quanto custa criar um app",
+    "slug": "quanto-custa-criar-um-app"
+  },
+  {
+    "termo": "como montar um sistema de delivery",
+    "slug": "como-montar-um-sistema-de-delivery"
+  },
+  {
+    "termo": "como ter um aplicativo proprio",
+    "slug": "como-ter-um-aplicativo-proprio"
+  },
+  {
+    "termo": "vale a pena criar app de delivery",
+    "slug": "vale-a-pena-criar-app-de-delivery"
+  },
+  {
+    "termo": "quanto custa um app tipo uber",
+    "slug": "quanto-custa-um-app-tipo-uber"
+  },
+  {
+    "termo": "como funciona um aplicativo de entregas",
+    "slug": "como-funciona-um-aplicativo-de-entregas"
+  },
+  {
+    "termo": "como ganhar dinheiro com app",
+    "slug": "como-ganhar-dinheiro-com-app"
+  },
+  {
+    "termo": "como criar aplicativo sem saber programar",
+    "slug": "como-criar-aplicativo-sem-saber-programar"
+  },
+  {
+    "termo": "melhor sistema de delivery para pequenos negocios",
+    "slug": "melhor-sistema-de-delivery-para-pequenos-negocios"
+  },
+  {
+    "termo": "criacao de app delivery para restaurantes",
+    "slug": "criacao-de-app-delivery-para-restaurantes"
+  },
+  {
+    "termo": "desenvolvimento de app para farmacia",
+    "slug": "desenvolvimento-de-app-para-farmacia"
+  },
+  {
+    "termo": "sistema de entregas para mercado",
+    "slug": "sistema-de-entregas-para-mercado"
+  },
+  {
+    "termo": "aplicativo para pizzaria com delivery",
+    "slug": "aplicativo-para-pizzaria-com-delivery"
+  },
+  {
+    "termo": "app de transporte para motoristas",
+    "slug": "app-de-transporte-para-motoristas"
+  },
+  {
+    "termo": "plataforma de pedidos online para lojas",
+    "slug": "plataforma-de-pedidos-online-para-lojas"
+  },
+  {
+    "termo": "sistema de delivery para distribuidora",
+    "slug": "sistema-de-delivery-para-distribuidora"
+  },
+  {
+    "termo": "app de pedidos para lanchonete",
+    "slug": "app-de-pedidos-para-lanchonete"
+  },
+  {
+    "termo": "software de entregas para comercio local",
+    "slug": "software-de-entregas-para-comercio-local"
+  },
+  {
+    "termo": "aplicativo de vendas com entrega",
+    "slug": "aplicativo-de-vendas-com-entrega"
   }
 ]
